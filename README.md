@@ -56,16 +56,16 @@ To achive this the website will have the following criteria:
 ## 4. Wireframes Mockups: <a name="Wireframes"></a>
 
 ### Desktop <a name="Desktop"></a>
-![Desktop](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=9145b240-ef96-40db-910d-05edbec7207d)
+![Desktop](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/desktop_home.png)
 
 <br>
 
 ### Tablet <a name="Tablet"></a>
-![Tablet](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=2b862e9e-218a-4e13-9dcb-f341f11c7133)
+![Tablet](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/mobile_ipad.png)
 <br>
 
 ### Mobile <a name="Mobile"></a>
-![Mobile](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=11dc1294-7612-4e74-b9d9-508d02e15b85)
+![Mobile](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/mobile_home.png)
 ---
 <a name="Client"></a>
 ## Client Stories
@@ -83,17 +83,17 @@ To achive this the website will have the following criteria:
 ## Features:
 
 ### - An user wants to find a recipe searching by ingredients:
-![Search](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=d67cf971-c9bf-4552-8db6-68b18c123d18)
+![Search](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/search_by_ingredient.png)
 
 ### - An user wants to create their own recipe:
-![Create](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=edd687ac-c848-4a37-a3c0-f0614df59b72)
+![Create](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/desktop_edit_create.png)
 
 ### - An user wants to either edit a recipe:
-![Edit](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=b7e5d69a-be82-4b92-b2e7-e5f11423ab15)
+![Edit](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/edit_recipe.png)
 
 Or Delete the recipe:
 
-![Delete](https://c260d43f-ac4d-48b4-aa7c-e84486ac0618.ws-eu01.gitpod.io/files/download/?id=8223208a-0677-46b1-8783-c4dbcc1321ee)
+![Delete](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/delete_recipe.png)
 
 
 <a name="Future"></a>
