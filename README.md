@@ -82,18 +82,22 @@ To achive this the website will have the following criteria:
 <a name="Features"></a>
 ## Features:
 
-### - An user wants to find a recipe searching by ingredients:
-![Search](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/search_by_ingredient.png)
+### - An user wants to find a recipe:
+![Search](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/desktop_search_result.png)
+
+![Search](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/recipe.png)
 
 ### - An user wants to create their own recipe:
-![Create](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/desktop_edit_create.png)
+![Create](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/create.png)
 
 ### - An user wants to either edit a recipe:
-![Edit](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/edit_recipe.png)
+![Edit_icon](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/edit_icon.png)
+
+![Edit](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/edit.png)
 
 Or Delete the recipe:
 
-![Delete](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/delete_recipe.png)
+![Delete](https://raw.githubusercontent.com/Dhracko/frankies_kitchen/master/static/wireframes/delete.png)
 
 
 <a name="Future"></a>
