@@ -1,3 +1,13 @@
-body {
-    background-color: whitesmoke;
+.header-blue {
+    background-color: #2f73f0;
+    height: 150px;
+}
+
+.side-nav li>a {
+    font-size: 20px;
+    color: #2f73f0;
+}
+
+a:hover {
+    color: #fff
 }
