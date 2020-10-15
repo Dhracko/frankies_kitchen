@@ -1,3 +1,27 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="row">
+  <div class="card-deck">
+    {% for recipe in recipes %}
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{recipe.recipe_img_small}}" class="card-img" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{recipe.recipe_name}}</h5>
+            <p class="card-text">{{recipe.recipe_description}}</p>
+            <p class="card-text">
+              <small class="text-muted">Portions: {{recipe.recipe_portions}}</small>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Time: {{recipe.recipe_time}}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
