@@ -1,24 +1,40 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .header-blue {
-    background-color: #2f73f0;
-    height: 150px;
+  background-color: #2f73f0;
+  height: 150px;
 }
 
-.side-nav li>a {
-    font-size: 20px;
-    color: #2f73f0;
+.nav-white {
+  color: #ffffff;
 }
 
-a:hover {
-    color: #fff
+.nav-white:hover {
+  color: #0f244b;
+}
+
+@media  screen and (max-width: 800px) {
+    .nav-full {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .nav-mobile li {
+      float: none;
+      display: none;
+    }
 }
 
 .logo {
-    background-image: url(generic_logo_creation.png);
-    background-repeat: no-repeat;
-    height: 300px;
-    background-size:contain;
+  background-image: url(generic_logo_creation.png);
+  background-repeat: no-repeat;
+  height: 300px;
+  background-size: contain;
 }
 
 .logo h4 {
-    text-align: center; 
+    text-align: center;
 }
