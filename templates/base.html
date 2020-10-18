@@ -15,21 +15,36 @@
 	<header>
 		<nav class="navbar navbar-dark header-blue">
             <div class="col d-flex justify-content-end">
-				<a href="{{url_for('get_recipes')}}"><img src="static/images/logo.png" alt="logo"></a>
-				<ul class="nav-full nav align-items-center offset-sm-3">
-					<li class="nav-item"><a class="nav-white" href="{{url_for('get_recipes')}}"><i class="material-icons left">home</i>Home</a></li>
-					<li class="nav-item"><a class="nav-white" href="{{url_for('add_recipe')}}"><i class="material-icons left">add</i>Add</a></li>
-                    <li class="nav-item"><a class="nav-white" href="#"><i class="material-icons left">search</i>Search</a></li>
-					<li class="nav-item"><a class="nav-white" href="#"><i class="material-icons left">local_dining</i>Contact Us</a></li>
+                <span class="menu-bar" onclick="openNav()">&#9776;</span>
+
+				<a class="banner-logo" href="{{url_for('get_recipes')}}"><img src="static/images/logo.png" alt="logo"></a>
+
+				<ul class="nav-full nav align-items-center">
+					<li class="nav-item"><a class="nav-white" href="{{url_for('get_recipes')}}"><i class="material-icons left">home</i> Home</a></li>
+					<li class="nav-item"><a class="nav-white" href="{{url_for('add_recipe')}}"><i class="material-icons left">add</i> Add</a></li>
+                    <li class="nav-item"><a class="nav-white" href="#"><i class="material-icons left">search</i> Search</a></li>
+					<li class="nav-item"><a class="nav-white" href="#"><i class="material-icons left">local_dining</i> Contact Us</a></li>
 				</ul>
-				<ul class="nav-mobile">
+				<!-- <ul id="menu" class="nav-mobile overlay">
 					<li><a href="{{url_for('get_recipes')}}"><i class="material-icons left">home</i>Home</a></li>
 					<li><a href="{{url_for('add_recipe')}}"><i class="material-icons left">add</i>Add Recipe</a></li>
                     <li><a href="#"><i class="material-icons left">search</i>Search Recipe</a></li>
 					<li><a href="#"><i class="material-icons left">local_dining</i>Contact Us</a></li>
-				</ul>
+				</ul> -->
+				
             </div>
+            <div id="menu" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<div class="overlay-content">
+						<a href="{{url_for('get_recipes')}}"><i class="material-icons left">home</i> Home</a>
+						<a href="{{url_for('add_recipe')}}"><i class="material-icons left">add</i> Add Recipe</a>
+						<a href="#"><i class="material-icons left">search</i> Search Recipe</a>
+						<a href="#"><i class="material-icons left">local_dining</i> Contact Us</a>
+					</div>
+			</div>
+
 		</nav>
+        
 	</header>
 	<div class="container">
 		{% block content %} {% endblock %}
@@ -37,6 +52,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		function openNav() {
+	  document.getElementById("menu").style.width = "50%";
+	}
+	
+	function closeNav() {
+	  document.getElementById("menu").style.width = "0%";
+	}
+	</script>
 </body>
 
 </html>

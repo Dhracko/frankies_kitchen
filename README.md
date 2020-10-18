@@ -120,6 +120,8 @@ A nice future feature to create is the selection of the ingredients of a recipe 
 <a name="Issues"></a>
 ### Issues and resolutions
 
+* Trying to use Materialize features casused a conflict with Bootstrap which result in the removal of Materialize.
+* 
 ---
 <a name="Deployment"></a>
 ## Deployment

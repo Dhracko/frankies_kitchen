@@ -2,6 +2,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Headers Menu */
+
 .header-blue {
   background-color: #2f73f0;
   height: 150px;
@@ -9,24 +11,93 @@ body {
 
 .nav-white {
   color: #ffffff;
+  padding-right: 7px;
 }
 
 .nav-white:hover {
   color: #0f244b;
 }
 
-@media  screen and (max-width: 800px) {
-    .nav-full {
+.banner-logo {
+    margin: auto;
+}
+
+@media  screen and (max-width: 850px) {
+    ul.nav-full {
         display: none;
     }
 }
 
-@media screen and (min-width: 801px) {
-    .nav-mobile li {
-      float: none;
+.nav-full {
+    position: absolute;
+    right: 0px;
+    top: 40%;
+}
+
+/* Burger Nav Bar */
+
+@media screen and (min-width: 851px) {
+    .menu-bar {
       display: none;
     }
 }
+
+.menu-bar {
+    position: absolute;
+    left: 10px;
+    font-size:30px;
+    cursor:pointer
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2f73f0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+/* New Recipe Creation  */
 
 .logo {
   background-image: url(generic_logo_creation.png);
