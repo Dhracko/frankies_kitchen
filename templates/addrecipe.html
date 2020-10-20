@@ -1,31 +1,52 @@
 {% extends 'base.html' %} {% block content %}
-<div class="row">
-  <div class="col d-flex justify-content-center align-items-end logo">
-    <form>
-      <input class="form-control" type="text" placeholder="Recipe Name" />
+
+<div class="row justify-content-center">
+  <div class="col-12 d-flex justify-content-center align-items-end logo"></div>
+  <div class="row">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+      <div class="row">
+        <div class="col-9">
+          <input
+            id="recipe_name"
+            name="recipe_name"
+            type="text"
+            class="form-control"
+            placeholder="Recipe Name"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="categories" name="course_name">
+            <option value="" disabled selected>Choose Course</option>
+            {% for cat in categories %}
+            <option value="{{cat.course_name}}">{{cat.course_name}}</option>
+            {% endfor %}
+          </select>
+          <label>Course</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-9">
+          <input id="ingrededient_1" name="recipe_ingredient_1" type="text" class="form-control" placeholder="Ingredient_1" />
+        </div>
+        <div class="col-3">
+          <input id="quantity_1" name="recipe_quantity_1" type="text" class="form-control" placeholder="Quantity_1" />
+        </div>
+      </div>
+
+      <div class="row">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+        >
+          Add Recipe
+        </button>
+      </div>
     </form>
   </div>
 </div>
-<div class="row justify-content-center">
-  <form>
-    <div class="form-row">
-      <div class="form-control col-9">
-        <label for="ingredient">Ingredient</label>
-        <input type="text" class="form-control" placeholder="Ingredient" />
-      </div>
-      <div class="form-control col-3">
-        <label for="quantity">Quantity</label>
-        <input type="text" class="form-control" placeholder="Quantity" />
-      </div>
-    </div>
-  </form>
-</div>
 
-<div class="row">
-  <form
-    action="{{url_for('insert_recipe')}}"
-    method="POST"
-    class="col-sm-12"
-  ></form>
-</div>
 {% endblock %}
