@@ -109,3 +109,7 @@ body {
 .logo h4 {
     text-align: center;
 }
+
+.card-body a {
+    text-decoration: none;
+}
