@@ -94,6 +94,13 @@ body {
     text-decoration: none;
 }
 
+/* Recipe Page view */
+
+.desc-heading {
+    text-decoration: underline;
+    padding: 15px 0px 5px;
+}
+
 /* Media Content */
 
 @media  screen and (max-width: 850px) {
