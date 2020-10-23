@@ -1,58 +1,69 @@
 {% extends 'base.html' %} {% block content %}
 <div class="row">
-    <div class="col-9">
-        <h1>{{recipe.recipe_name}}</h1>
-    </div>
-    <div class="col-3">
-	<ul class="nav justify-content-end">
-		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-edit"></i> Edit</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
-		</li>
-	</ul>
-    </div>
+	<div class="col-9 align-self-center">
+		<h1>{{recipe.recipe_name}}</h1>
+	</div>
+	<div class="col-3">
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+				<a class="nav-link" href="#"><i class="fas fa-edit"></i> Edit</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+			</li>
+		</ul>
+	</div>
 </div>
-<div class="container">
-  <div class="row">
-  <div class="col">
-    <div class="row">
-    <strong class="desc-heading">Recipe Description</strong>
-      <div class="col-12">
-        {{recipe.recipe_description}}
-      </div>
-    <strong class="desc-heading">Recipe Difficulty</strong>
-      <div class="col-12">
-        {{recipe.recipe_skill}}
-      </div>
-      <strong class="desc-heading">Preparation Time</strong>
-      <div class="col-12">
-        {{recipe.recipe_prep_time}}
-      </div>
-      <strong class="desc-heading">Cooking Time</strong>
-      <div class="col-12">
-        {{recipe.recipe_cooking_time}}
-      </div>
-      <strong class="desc-heading">Servings</strong>
-      <div class="col-12">
-        {{recipe.recipe_portions}}
-      </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<div class="row recipe-header">
+				<strong class="desc-heading">Recipe Description</strong>
+				<div class="col-12">
+					{{recipe.recipe_description}}
+				</div>
+				<strong class="desc-heading">Recipe Difficulty</strong>
+				<div class="col-12">
+					{{recipe.recipe_skill}}
+				</div>
+				<strong class="desc-heading">Preparation Time</strong>
+				<div class="col-12">
+					{{recipe.recipe_prep_time}} minutes
+				</div>
+				<strong class="desc-heading">Cooking Time</strong>
+				<div class="col-12">
+					{{recipe.recipe_cooking_time}} minutes
+				</div>
+				<strong class="desc-heading">Servings</strong>
+				<div class="col-12">
+					{{recipe.recipe_portions}} portions
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<img src="{{url_for('static', filename='images/wrap.jpg')}}" alt="wrap" />
     </div>
-    </div>
-    <div class="col">
-      <img src="{{url_for('static', filename='images/wrap.jpg')}}" alt="wrap" />
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div>
-        {{recipe.recipe_ingredients}}
-      </div>
-      <div>
-        {{recipe.recipe_steps}}
-      </div>
-    </div>
-  </div>
-</div>
+		</div>
+		
+			<div class="row no-gutters">
+				<div class="col-sm-4">
+					<ul class="list-group list-group-flush">
+						<h3 class="ing-header">Ingredients</h3>
+						{% for ingredient in recipe.recipe_ingredients %}
+						<li class="list-group-item">{{ingredient}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+                
+				<div class="col-sm-9 method-header">
+					<ul class="list-group">
+						<h3 class="ing-header">Method</h3>
+						{% for steps in recipe.recipe_steps %}
+						<li class="list-group-item">{{steps}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	
 {% endblock %}

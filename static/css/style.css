@@ -97,16 +97,36 @@ body {
 }
 
 /* Recipe Page view */
+.col-9 h1 {
+    text-align: center;
+}
+
+.recipe-header {
+    text-align: center;
+}
 
 .desc-heading {
     text-decoration: underline;
     padding: 15px 0px 5px;
     font-size: x-large;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 div.col-12 {
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
+}
+
+.ing-header {
+    text-decoration: underline;
+    padding: 10px;
+}
+
+.col-sm-9 .list-group {
+    width: -webkit-fill-available;
 }
 
 /* Media Content */
