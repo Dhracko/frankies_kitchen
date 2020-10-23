@@ -16,7 +16,7 @@
             <div class="col d-flex justify-content-end">
                 <span class="menu-bar" onclick="openNav()"><i class="fas fa-bars nav-white"></i></span>
 
-				<a class="banner-logo" href="{{url_for('get_recipes')}}"><img src="static/images/logo.png" alt="logo"></a>
+				<a class="banner-logo" href="{{url_for('get_recipes')}}"><img src="{{url_for('static', filename='images/logo.png')}}" alt="logo"></a>
 
 				<ul class="nav-full nav align-items-center">
 					<li class="nav-item"><a class="nav-white" href="{{url_for('get_recipes')}}"><i class="fas fa-home"></i> Home</a></li>
