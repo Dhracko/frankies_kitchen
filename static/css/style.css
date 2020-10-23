@@ -22,12 +22,6 @@ body {
     margin: auto;
 }
 
-@media  screen and (max-width: 850px) {
-    ul.nav-full {
-        display: none;
-    }
-}
-
 .nav-full {
     position: absolute;
     right: 0px;
@@ -36,18 +30,13 @@ body {
 
 /* Burger Nav Bar */
 
-@media screen and (min-width: 851px) {
-    .menu-bar {
-      display: none;
-    }
-}
-
 .menu-bar {
     position: absolute;
     left: 10px;
     font-size:30px;
     cursor:pointer
 }
+
 .overlay {
   height: 100%;
   width: 0;
@@ -88,15 +77,6 @@ body {
   font-size: 60px;
 }
 
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
-}
-
 /* New Recipe Creation  */
 
 .logo {
@@ -112,4 +92,27 @@ body {
 
 .card-body a {
     text-decoration: none;
+}
+
+/* Media Content */
+
+@media  screen and (max-width: 850px) {
+    ul.nav-full {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 851px) {
+    .menu-bar {
+      display: none;
+    }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
 }
