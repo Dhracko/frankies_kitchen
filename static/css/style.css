@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap');
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Dancing Script', cursive;
 }
 
 /* Headers Menu */
@@ -99,6 +101,12 @@ body {
 .desc-heading {
     text-decoration: underline;
     padding: 15px 0px 5px;
+    font-size: x-large;
+}
+
+div.col-12 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
 }
 
 /* Media Content */
