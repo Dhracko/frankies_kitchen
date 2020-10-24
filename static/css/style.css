@@ -96,6 +96,9 @@ body {
 .card-body a {
     text-decoration: none;
 }
+.recipe-btn {
+    padding: 25px 0px;
+}
 
 /* Recipe Page view */
 .col-9 h1, #recipe_name {
