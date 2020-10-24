@@ -37,7 +37,7 @@ def gt_recipe(recipe_id, recipe_name):
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('addrecipe.html',
+    return render_template('createrecipe.html',
                            categories=mongo.db.categories.find())
 
 
@@ -47,7 +47,6 @@ def insert_recipe():
         rec = request.form
 
         name = rec["recipe_name"]
-        course = rec["course_name"]
         description = rec["recipe_description"]
         prep_time = rec["preparation_time"]
         cook_time = rec["cooking_time"]
@@ -63,12 +62,11 @@ def insert_recipe():
 
         new_recipe = {
             "recipe_name": name,
-            "recipe_course": course,
             "recipe_description": description,
             "recipe_prep_time": int(prep_time),
             "recipe_cooking_time": int(cook_time),
             "recipe_skill": skill,
-            "recipe_portions": portions,
+            "recipe_portions": int(portions),
             "recipe_steps": steps_list,
             "recipe_ingredients": ingredient_list,
         }

@@ -33,20 +33,7 @@
                   >
                 </div>
               </div>
-            <!-- Course Type -->
-              <div class="form-group ">
-                <label for="course_name">What is the meal course type?</label>
-                <select
-                  class="form-control "
-                  id="categories"
-                  name="course_name"
-                >
-                  <option value="" disabled selected>Choose Course</option>
-                  {% for cat in categories %}
-                  <option value="{{cat.course_name}}">{{cat.course_name}}</option>
-                  {% endfor %}
-                </select>
-              </div>
+            
             <!-- Recipe Description -->
               <div class="form-group">
                 <label for="description"
@@ -61,7 +48,6 @@
                   maxlength="150"
                   required
                 ></textarea>
-
                 <!-- Message area for description remaining characters -->
 
                 <div class="text-remaining text-left p-2">
@@ -69,6 +55,23 @@
                   >
                 </div>
               </div>
+              
+                <!-- Course Type -->
+              <div class="form-group ">
+                <label for="course_name">What is the meal course type?</label>
+                <select
+                  class="form-control "
+                  id="categories"
+                  name="course_name"
+                >
+                  <option value="" disabled selected>Choose Course</option>
+                  {% for cat in categories %}
+                  <option value="{{cat.course_name}}">{{cat.course_name}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+                
             <!-- Recipe Preparation Time-->
               <div class="form-group">
                 <label for="preparation_time"

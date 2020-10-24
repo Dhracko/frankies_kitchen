@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Dancing Script', cursive;
+  font-size: 20px;;
 }
 
 /* Headers Menu */
@@ -97,8 +98,10 @@ body {
 }
 
 /* Recipe Page view */
-.col-9 h1 {
+.col-9 h1, #recipe_name {
     text-align: center;
+    font-size: 30px;
+
 }
 
 .recipe-header {
@@ -108,7 +111,7 @@ body {
 .desc-heading {
     text-decoration: underline;
     padding: 15px 0px 5px;
-    font-size: x-large;
+    font-size: 30px;
     text-align: center;
     display: block;
     margin-left: auto;
@@ -117,7 +120,7 @@ body {
 
 div.col-12 {
     font-family: 'Raleway', sans-serif;
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .ing-header {
