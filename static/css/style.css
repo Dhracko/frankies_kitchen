@@ -135,6 +135,11 @@ div.col-12 {
     width: -webkit-fill-available;
 }
 
+/* Udate - Edit Recipe */
+.step-number{
+    display: list-item;
+}
+
 /* Media Content */
 
 @media  screen and (max-width: 850px) {
