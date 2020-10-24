@@ -127,6 +127,13 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
+# Search Recipe by name
+@app.route('/search', methods=["POST"])
+def get_search():
+    return redirect(url_for("search_recipes",
+                            search_term=request.form.get("search_field")))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

@@ -1,6 +1,6 @@
 """
 Takes the Ingredients and the Method Steps and create a list
- to be added as a form of array
+ to be added as a form of an array
 """
 
 
