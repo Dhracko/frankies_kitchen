@@ -138,21 +138,23 @@ def get_search():
 @app.route('/search/<search_term>')
 def search_recipes(search_term):
 
+    recipe = mongo.db.recipes
+
     # Create a index for recipe name search.
 
-    mongo.db.recipes.createIndex([
-        ("recipe_name", "text")
-    ])
+    recipe.create_index([
+        ("recipe_name", "text")])
 
-    search_result = recipe.find({"$text": {"$search": search_term}},
-                                {"score": {"$meta": "textScore"}}).sort([
-                                    ("score", {"$meta": "textScore"})]).skip(
-                                        (page - 1) * per_page).limit(per_page)
+    search_result = recipe.find({"$text": {"$search": search_term}})
 
-    search_result = recipe.count_documents({"$text": {"$search": search_term}})
+    # Counts the number of recipes which match the search
+
+    search_count = recipe.count_documents({"$text":
+                                           {"$search": search_term}})
 
     return render_template("search.html", search_term=search_term,
-                           search_result=search_result)
+                           search_result=search_result,
+                           count=search_count)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="row no-gutters text-center justify-content-center">
+        <!-- If no results are found for search then the below is shown -->
+
+        {% if count == 0 %}
+        <div class="col-12">
+          <p>Sorry, no results found</p>
+        </div>
+        {% else %} {% for result in search_result %}
+
+        <div class="col-12">
+          <a
+            href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+          >
+            <div>
+              <p class="recipe-title">
+                {{result['recipe_name']}}
+              </p>
+            </div>
+          </a>
+        </div>
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
