@@ -10,20 +10,54 @@
         <div class="col-12">
           <p>Sorry, no results found</p>
         </div>
-        {% else %} {% for result in search_result %}
+        {% else %}
+        <div class="row">
+          <div class="card-deck">
+            {% for result in search_result %}
+            <div class="col-4">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <a
+                      href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+                    >
+                      <img
+                        src="{{url_for('static', filename='images/logo.png')}}"
+                        class="card-img"
+                        alt="recipe image"
+                      />
+                    </a>
+                  </div>
 
-        <div class="col-12">
-          <a
-            href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
-          >
-            <div>
-              <p class="recipe-title">
-                {{result['recipe_name']}}
-              </p>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a
+                        href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+                      >
+                        <h5 class="card-title">{{result['recipe_name']}}</h5>
+                        <p class="card-text">
+                          {{result['recipe_description']}}
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >Portions: {{result['recipe_portions']}}</small
+                          >
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >Time: {{result['recipe_cooking_time']}}</small
+                          >
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+            {% endfor %}
+          </div>
         </div>
-        {% endfor %} {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
