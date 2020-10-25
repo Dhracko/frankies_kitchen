@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    return render_template('landing.html',
+    return render_template('initial.html',
                            recipes=mongo.db.recipes.find())
 
 
@@ -29,8 +29,8 @@ def get_recipes():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('createrecipe.html',
-                           categories=mongo.db.categories.find())
+    return render_template('create_recipe.html',
+                           recipes=mongo.db.recipes.find())
 
 
 @app.route('/insert_recipe', methods=['POST'])
@@ -80,7 +80,7 @@ def gt_recipe(recipe_id, recipe_name):
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template('editrecipe.html', recipe=the_recipe)
+    return render_template('edit_recipe.html', recipe=the_recipe)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
@@ -127,11 +127,32 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
-# Search Recipe by name
+# Search Recipe by name form
 @app.route('/search', methods=["POST"])
 def get_search():
-    return redirect(url_for("search_recipes",
+    return redirect(url_for('search_recipes',
                             search_term=request.form.get("search_field")))
+
+
+# Search Results Page
+@app.route('/search/<search_term>')
+def search_recipes(search_term):
+
+    # Create a index for recipe name search.
+
+    mongo.db.recipes.createIndex([
+        ("recipe_name", "text")
+    ])
+
+    search_result = recipe.find({"$text": {"$search": search_term}},
+                                {"score": {"$meta": "textScore"}}).sort([
+                                    ("score", {"$meta": "textScore"})]).skip(
+                                        (page - 1) * per_page).limit(per_page)
+
+    search_result = recipe.count_documents({"$text": {"$search": search_term}})
+
+    return render_template("search.html", search_term=search_term,
+                           search_result=search_result)
 
 
 if __name__ == '__main__':

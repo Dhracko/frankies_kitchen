@@ -6,7 +6,6 @@ body {
 }
 
 /* Headers Menu */
-
 .header-blue {
   background-color: #2f73f0;
   height: 150px;
@@ -31,8 +30,8 @@ body {
     top: 40%;
 }
 
-/* Burger Nav Bar */
 
+/* Burger Nav Bar */
 .menu-bar {
     position: absolute;
     left: 10px;
@@ -80,8 +79,12 @@ body {
   font-size: 60px;
 }
 
-/* New Recipe Creation  */
+/* Search Bar */
+.search-bar {
+    padding: 20px 0px 30px;
+}
 
+/* New Recipe Creation  */
 .logo {
   background-image: url(generic_logo_creation.png);
   background-repeat: no-repeat;
@@ -141,7 +144,6 @@ div.col-12 {
 }
 
 /* Media Content */
-
 @media  screen and (max-width: 850px) {
     ul.nav-full {
         display: none;
