@@ -84,6 +84,10 @@ body {
     padding: 20px 0px 30px;
 }
 
+#search_field.form-control {
+    display: inline-flex;
+}
+
 /* New Recipe Creation  */
 .logo {
   background-image: url(generic_logo_creation.png);
