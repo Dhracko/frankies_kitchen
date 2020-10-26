@@ -108,16 +108,13 @@
         document.getElementById("menu").style.width = "0%";
       }
 
-      // When the user scrolls the page, execute myFunction
+      // Function to make the Header fixed to the top
       window.onscroll = function () {
         myFunction();
       };
       var header = document.getElementById("header");
-
-      // Get the offset position of the navbar
       var sticky = header.offsetTop;
 
-      // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
       function myFunction() {
         if (window.pageYOffset > sticky) {
           header.classList.add("sticky");
