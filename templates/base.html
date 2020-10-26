@@ -17,8 +17,8 @@
   </head>
 
   <body>
-    <header id="header">
-      <nav class="navbar navbar-dark header-blue">
+    <header>
+      <nav class="navbar navbar-dark header-bar">
         <div class="col d-flex justify-content-end">
           <span class="menu-bar" onclick="openNav()"
             ><i class="fas fa-bars nav-white"></i
@@ -66,7 +66,9 @@
       </nav>
     </header>
     <div class="container">
-      {% block content %} {% endblock %}
+      <div class="wrap-content">
+        {% block content %} {% endblock %}
+      </div>
     </div>
 
     <footer>
@@ -106,21 +108,6 @@
 
       function closeNav() {
         document.getElementById("menu").style.width = "0%";
-      }
-
-      // Function to make the Header fixed to the top
-      window.onscroll = function () {
-        myFunction();
-      };
-      var header = document.getElementById("header");
-      var sticky = header.offsetTop;
-
-      function myFunction() {
-        if (window.pageYOffset > sticky) {
-          header.classList.add("sticky");
-        } else {
-          header.classList.remove("sticky");
-        }
       }
     </script>
   </body>

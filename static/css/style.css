@@ -1,25 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap");
 
 body {
-  font-family: 'Dancing Script', cursive;
-  font-size: 20px;;
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  margin: 0;
+  min-height: 100%;
+   
+}
+.wrap-content {
+    padding-bottom: 2.5rem;
 }
 
 /* Headers Menu */
-.header-blue {
+.header-bar {
   background-color: #2f73f0;
   height: 150px;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.sticky + .content {
-  padding-top: 102px;
 }
 
 .nav-white {
@@ -32,22 +27,21 @@ body {
 }
 
 .banner-logo {
-    margin: auto;
+  margin: auto;
 }
 
 .nav-full {
-    position: absolute;
-    right: 0px;
-    top: 40%;
+  position: absolute;
+  right: 0px;
+  top: 40%;
 }
-
 
 /* Burger Nav Bar */
 .menu-bar {
-    position: absolute;
-    left: 10px;
-    font-size:30px;
-    cursor:pointer
+  position: absolute;
+  left: 10px;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .overlay {
@@ -79,7 +73,8 @@ body {
   transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover,
+.overlay a:focus {
   color: #f1f1f1;
 }
 
@@ -92,94 +87,96 @@ body {
 
 /* Search Bar */
 .search-bar {
-    padding: 20px 0px 30px;
+  padding: 20px 0px 30px;
 }
 
 #search_field.form-control {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 /* Main Page Cards */
 .card-body a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* New Recipe Creation  */
 .recipe-btn {
-    padding: 25px 0px 200px;
+  padding: 25px 0px 100px;
 }
 
 /* Recipe Page view */
-.col-9 h1, #recipe_name {
-    text-align: center;
-    font-size: 30px;
-
+.col-9 h1,
+#recipe_name {
+  text-align: center;
+  font-size: 30px;
+  height: 100%;
 }
 
 .recipe-header {
-    text-align: center;
+  text-align: center;
 }
 
 .desc-heading {
-    text-decoration: underline;
-    padding: 15px 0px 5px;
-    font-size: 30px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+  text-decoration: underline;
+  padding: 15px 0px 5px;
+  font-size: 30px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.col-12 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 17px;
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
 }
 
 .ing-header {
-    text-decoration: underline;
-    padding: 10px;
+  text-decoration: underline;
+  padding: 10px;
 }
 
 .col-sm-9 .list-group {
-    width: -webkit-fill-available;
+  width: -webkit-fill-available;
 }
 
 /* Udate - Edit Recipe */
-.step-number{
-    display: list-item;
+.step-number {
+  display: list-item;
 }
 
 /* Footer */
 .footer-bg {
-    height: 100px;
-    background-color: #2f73f0; 
-    position: fixed;
-    bottom: 0; 
+  background-color: #2f73f0;
+  position: absolute;
+  height: 100px;
 }
 
-.social-icon a i{
-    color: #ffffff;
-    padding: 10px 30px;
+.social-icon a i {
+  color: #ffffff;
+  padding: 10px 30px;
 }
 
 /* Media Content */
-@media  screen and (max-width: 850px) {
-    ul.nav-full {
-        display: none;
-    }
+@media screen and (max-width: 850px) {
+  ul.nav-full {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 851px) {
-    .menu-bar {
-      display: none;
-    }
+  .menu-bar {
+    display: none;
+  }
 }
 
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
+  .overlay a {
+    font-size: 20px;
+  }
   .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
 }
