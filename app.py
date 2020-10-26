@@ -1,9 +1,11 @@
+"""Module for receipe app"""
 import os
-from flask import Flask, render_template, redirect, request, url_for, request
+from os import path
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from lists import recipe_ingredients, recipe_steps
-from os import path
+
 if path.exists("env.py"):
     import env
 
@@ -44,10 +46,6 @@ def insert_recipe():
     skill = rec["skill"]
     portions = rec["portions"]
 
-    """
-    Below is the Ingredients and Steps which were
-    predeterment in the function before
-    """
     ingredient_list = recipe_ingredients(rec)
     steps_list = recipe_steps(rec)
 
@@ -137,10 +135,13 @@ def get_search():
 # Search Results Page
 @app.route('/search/<search_term>')
 def search_recipes(search_term):
-
+    """Searches receipe by name
+    Args:
+        search_term: Search text to match recepies
+    Returns:
+        Rendered search.html containing receipes matching search_term
+    """
     recipe = mongo.db.recipes
-
-    # Create a index for recipe name search.
 
     recipe.create_index([
         ("recipe_name", "text")])
