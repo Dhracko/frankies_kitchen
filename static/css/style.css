@@ -40,7 +40,7 @@ body {
   left: 10px;
   font-size: 30px;
   cursor: pointer;
-  }
+}
 
 .icon-burger {
   border: outset;
@@ -48,7 +48,7 @@ body {
 }
 
 .icon-burger i {
-    padding: 7px;
+  padding: 7px;
 }
 
 .overlay {
@@ -92,7 +92,14 @@ body {
   font-size: 60px;
 }
 
+/* Landing Page */
 
+.wrap-content {
+  width: 90%;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Search Bar */
 .search-bar {
