@@ -18,10 +18,6 @@
 	<div class="row">
 		<div class="col">
 			<div class="row recipe-header">
-				<strong class="desc-heading">Recipe Description</strong>
-				<div class="col-12">
-					{{recipe.recipe_description}}
-				</div>
 				<strong class="desc-heading">Recipe Difficulty</strong>
 				<div class="col-12">
 					{{recipe.recipe_skill}}
@@ -37,6 +33,10 @@
 				<strong class="desc-heading">Servings</strong>
 				<div class="col-12">
 					{{recipe.recipe_portions}} portions
+				</div>
+                <strong class="desc-heading">Recipe Description</strong>
+				<div class="col-12">
+					{{recipe.recipe_description}}
 				</div>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 				</div>
                 
 				<div class="col-sm-9 method-header">
-					<ol class="list-group">
+					<ol class="list-group list-group-flush">
 						<h3 class="ing-header">Method</h3>
 						{% for steps in recipe.recipe_steps %}
 						<li class="list-group-item step-number">{{steps}}</li>
