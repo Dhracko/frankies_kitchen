@@ -5,6 +5,7 @@ body {
   font-size: 20px;
   margin: 0;
   background-color: #e0e0e0;
+  color: #555555;
 }
 .wrap-content {
   padding-bottom: 2.5rem;
@@ -121,6 +122,12 @@ body {
   padding: 25px 0px 100px;
 }
 
+.recipe-header .col-12,
+.ing-container,
+.method-header {
+    padding: 0;
+}
+
 /* Recipe Page view */
 .col-9 h1,
 #recipe_name {
@@ -144,12 +151,11 @@ div.col-12 {
 
 .ing-header {
   text-decoration: underline;
-  padding: 10px;
-  
+  padding: 10px 0px;
 }
 
 .list-group li {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .col-sm-9 .list-group {
@@ -163,8 +169,8 @@ div.col-12 {
 
 /* Search Page */
 
-.card.mb-3{
-    max-width: 540px;
+.card.mb-3 {
+  max-width: 540px;
 }
 
 /* Footer */
