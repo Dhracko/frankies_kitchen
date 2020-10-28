@@ -28,19 +28,20 @@
     <div class="row">
       <div class="col">
         <div class="row recipe-header">
-          <strong class="desc-heading">Recipe Description</strong>
-          <div class="col-12">
-            <textarea
-              class="form-control"
-              name="recipe_description"
-              id="description"
-              cols="40"
-              rows="3"
-              minlength="10"
-              maxlength="150"
-              required
-            ></textarea>
-          </div>
+          <label class="col-12">
+            <strong class="desc-heading">Recipe Description</strong>
+            <div class="col-12">
+              <textarea
+                class="form-control"
+                name="recipe_description"
+                id="description"
+                cols="40"
+                rows="3"
+                minlength="10"
+                maxlength="150"
+                required
+              ></textarea></div
+          ></label>
           <div class="text-remaining text-left p-2">
             <small
               ><span id="description-count">150</span> characters
@@ -50,59 +51,65 @@
           <div class="w-100"></div>
 
           <!-- Recipe Dificulty drop down menu -->
-          <strong class="desc-heading">Recipe Difficulty</strong>
-          <div class="col-12">
-            <select class="form-control" name="skill" id="skill" required>
-              <option value="" disabled selected hidden
-                >Please choose a difficulty Level</option
-              >
-              <option value="very easy">Very easy</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
+          <label class="col-12">
+            <strong class="desc-heading">Recipe Difficulty</strong>
+            <div class="col-12">
+              <select class="form-control" name="skill" id="skill" required>
+                <option value="" disabled selected hidden
+                  >Please choose a difficulty Level</option
+                >
+                <option value="Very easy">Very easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div></label
+          >
           <!-- Preparation Time Input -->
-          <strong class="desc-heading">Preparation Time</strong>
-          <div class="col-12">
-            <input
-              class="form-control"
-              type="number"
-              name="preparation_time"
-              max="360"
-              id="preparation_time"
-              placeholder="Minutes"
-              min="0"
-              required
-            />
-          </div>
+          <label class="col-12">
+            <strong class="desc-heading">Preparation Time</strong>
+            <div class="col-12">
+              <input
+                class="form-control"
+                type="number"
+                name="preparation_time"
+                max="360"
+                id="preparation_time"
+                placeholder="Minutes"
+                min="0"
+                required
+              /></div
+          ></label>
           <!-- Cooking Time Input -->
-          <strong class="desc-heading">Cooking Time</strong>
-          <div class="col-12">
-            <input
-              class="form-control"
-              type="number"
-              name="cooking_time"
-              id="cooking_time"
-              max="1000"
-              placeholder="Minutes"
-              min="0"
-              required
-            />
-          </div>
-          <strong class="desc-heading">Servings</strong>
-          <div class="col-12">
-            <input
-              class="form-control"
-              type="number"
-              name="portions"
-              id="portions"
-              max="100"
-              placeholder="Portions"
-              min="0"
-              required
-            />
-          </div>
+          <label class="col-12">
+            <strong class="desc-heading">Cooking Time</strong>
+            <div class="col-12">
+              <input
+                class="form-control"
+                type="number"
+                name="cooking_time"
+                id="cooking_time"
+                max="1000"
+                placeholder="Minutes"
+                min="0"
+                required
+              /></div
+          ></label>
+          <!-- Portions -->
+          <label class="col-12">
+            <strong class="desc-heading">Servings</strong>
+            <div class="col-12">
+              <input
+                class="form-control"
+                type="number"
+                name="portions"
+                id="portions"
+                max="100"
+                placeholder="Portions"
+                min="0"
+                required
+              /></div
+          ></label>
         </div>
       </div>
       <div class="col">
@@ -131,10 +138,8 @@
           />
         </div>
         <!-- User Interaction Buttons for adding/removing input for ingredients -->
-        <div class="text-center">
-          <small class="form-text text-muted"
-            >Need to add or remove a row?</small
-          >
+        <div>
+          <small class="form-text">Need to add or remove a row?</small>
           <button
             class="btn-add"
             id="add_ingredient"
@@ -172,10 +177,8 @@
         </div>
 
         <!-- User Interaction Buttons for adding/removing lines for steps -->
-        <div class="text-center">
-          <small class="form-text text-muted"
-            >Need to add or remove a row?</small
-          >
+        <div>
+          <small class="form-text">Need to add or remove a row?</small>
           <button
             class="btn-add"
             id="add_step"

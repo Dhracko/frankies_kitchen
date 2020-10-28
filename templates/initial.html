@@ -1,13 +1,21 @@
 {% extends 'base.html' %} {% block content %}
+
+<!-- Search Bar -->
 <div class="row justify-content-center search-bar">
   <form class="col" action="{{url_for('get_search')}}" method="POST">
-    <input  class="form-control col-9" type="search" name="search_field" id="search_field" placeholder="Search by name"/>
+    <label class="col-9">Search by name
+    <input
+      class="form-control col-9"
+      type="search"
+      name="search_field"
+      id="search_field"
+    /></label>
     <button type="submit" class="btn btn-primary col-2">
       <i class="fas fa-search"></i> Search
     </button>
   </form>
 </div>
-
+<!-- Recipes Card style -->
 <div class="row">
   <div class="card-deck">
     {% for recipe in recipes %}
