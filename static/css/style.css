@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap");
 
+html {
+    font-size: 24px;
+}
+
 body {
   font-family: "Dancing Script", cursive;
-  font-size: 20px;
   margin: 0;
   background-color: #e0e0e0;
   color: #555555;
@@ -76,7 +79,6 @@ body {
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 24px;
   color: #ffffff;
   display: block;
   transition: 0.3s;
@@ -116,7 +118,6 @@ body {
 .card-body a {
   text-decoration: none;
   color: #007faa;
-  font-size: 24px;
 }
 
 /* New Recipe Creation  */
@@ -127,14 +128,13 @@ body {
 .recipe-header .col-12,
 .ing-container,
 .method-header {
-    padding: 0;
+  padding: 0;
 }
 
 /* Recipe Page view */
 .col-9 h1,
 #recipe_name {
   text-align: center;
-  font-size: 30px;
   height: 100%;
 }
 
@@ -146,9 +146,9 @@ body {
   margin-right: auto;
 }
 
-div.col-12 {
+.recipe-header div.col-12 {
   font-family: "Raleway", sans-serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .ing-header {
@@ -158,6 +158,7 @@ div.col-12 {
 
 .list-group li {
   background-color: #e0e0e0;
+  padding: 0.25rem 0;
 }
 
 .col-sm-9 .list-group {
