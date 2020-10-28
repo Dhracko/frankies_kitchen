@@ -6,21 +6,22 @@
 
 1. [Aim of the site](#Aim)
 2. [UX](#UX)
-3. [Wireframes](#Wireframes) 
+3. [Design Choices](#Design)
+4. [Wireframes](#Wireframes) 
     * [Desktop](#Desktop)
 	* [Tablet](#Tablet)
 	* [Mobile](#Mobile)
-4. [Client Stories](#Client)
-5. [Features](#Features)
-6. [Future Goals](#Future)
-7. [Technology Used](#Technology)
-8. [Testing](#Testing)
+5. [Client Stories](#Client)
+6. [Features](#Features)
+7. [Future Goals](#Future)
+8. [Technology Used](#Technology)
+9. [Testing](#Testing)
 	* [Issues and resolutions](#Issues)
-9. [Deployment](#Deployment)
-10. [Credits](#Credits)
-11. [Content](#Content)
-12. [Acknowledgements](#Acknowledgements)
-13. [Disclaimer](#Disclaimer)
+10. [Deployment](#Deployment)
+11. [Credits](#Credits)
+12. [Content](#Content)
+13. [Acknowledgements](#Acknowledgements)
+14. [Disclaimer](#Disclaimer)
 
 ---
 
@@ -52,6 +53,21 @@ To achive this the website will have the following criteria:
 3. The creation of the back-end and front-end functionality for users to lacate recipes based on the recipe's field.
 4. To provide results in a manner that is visually appealling and user friendly.
 
+---
+
+## 3. Design Choices
+
+### Fonts
+
+- [**Dancing Script** ](https://fonts.google.com/specimen/Dancing+Script?vfonly=true&query=danc) - I use this font as main headers as It remind me the hand writting of my chef friend writting me recipes.
+
+- [**Raleway**](https://fonts.google.com/specimen/Raleway?vfonly=true&query=rale) - I used this font as i makes a nice contrast with the hand writting making it look more of a professional cook book.
+
+### Colours
+
+
+
+---
 
 ## 4. Wireframes Mockups: <a name="Wireframes"></a>
 

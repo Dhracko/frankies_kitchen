@@ -11,15 +11,15 @@
 <div class="row">
   <div class="card-deck">
     {% for recipe in recipes %}
-    <div class="col-4">
-      <div class="card mb-3" style="max-width: 540px;">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card mb-3">
         <div class="row no-gutters">
           <div class="col-md-4">
             <a
               href="{{url_for('gt_recipe', recipe_id=recipe['_id'],recipe_name=recipe['recipe_name'])}}"
             >
               <img
-                src="{{url_for('static', filename='images/logo.png')}}"
+                src="{{url_for('static', filename='images/generic_logo.png')}}"
                 class="card-img"
                 alt="recipe image"
               />

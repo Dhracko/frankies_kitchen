@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-dark header-bar">
         <div class="col d-flex justify-content-end">
-          <span class="menu-bar" onclick="openNav()"
+          <span class="menu-bar icon-burger" onclick="openNav()"
             ><i class="fas fa-bars nav-white"></i
           ></span>
 
@@ -59,13 +59,12 @@
             <a href="{{url_for('add_recipe')}}"
               ><i class="fas fa-plus"></i> Add Recipe</a
             >
-            <a href="#"><i class="fas fa-search"></i> Search Recipe</a>
             <a href="#"><i class="far fa-envelope"></i> Contact Us</a>
           </div>
         </div>
       </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
       <div class="wrap-content">
         {% block content %} {% endblock %}
       </div>
@@ -76,19 +75,18 @@
         <div class="row">
           <div class="col-12 col-md social-icon">
             <a href="https://www.facebook.com/" target="_blank"
-              ><i class="fab fa-facebook-f fa-2x"></i
-            ></a>
+              ><i class="fab fa-facebook-f fa-lg"></i></a>
             <a href="https://twitter.com/" target="_blank"
-              ><i class="fab fa-twitter fa-2x"></i
+              ><i class="fab fa-twitter"></i
             ></a>
             <a href="https://www.youtube.com/" target="_blank"
-              ><i class="fab fa-youtube fa-2x"></i
+              ><i class="fab fa-youtube fa-lg"></i
             ></a>
             <a href="https://www.instagram.com/" target="_blank"
-              ><i class="fab fa-instagram fa-2x"></i
+              ><i class="fab fa-instagram fa-lg"></i
             ></a>
             <a href="https://www.pinterest.co.uk/" target="_blank"
-              ><i class="fab fa-pinterest fa-2x"></i
+              ><i class="fab fa-pinterest fa-lg"></i
             ></a>
           </div>
         </div>

@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap");
 
+html {
+    font-size: 24px;
+}
+
 body {
   font-family: "Dancing Script", cursive;
-  font-size: 20px;
   margin: 0;
-  min-height: 100%;
-   
+  background-color: #e0e0e0;
+  color: #555555;
 }
 .wrap-content {
-    padding-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 /* Headers Menu */
@@ -44,6 +47,15 @@ body {
   cursor: pointer;
 }
 
+.icon-burger {
+  border: outset;
+  border-color: cornflowerblue;
+}
+
+.icon-burger i {
+  padding: 7px;
+}
+
 .overlay {
   height: 100%;
   width: 0;
@@ -67,7 +79,6 @@ body {
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 24px;
   color: #ffffff;
   display: block;
   transition: 0.3s;
@@ -85,6 +96,15 @@ body {
   font-size: 60px;
 }
 
+/* Landing Page */
+
+.wrap-content {
+  width: 90%;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Search Bar */
 .search-bar {
   padding: 20px 0px 30px;
@@ -97,6 +117,7 @@ body {
 /* Main Page Cards */
 .card-body a {
   text-decoration: none;
+  color: #007faa;
 }
 
 /* New Recipe Creation  */
@@ -104,36 +125,40 @@ body {
   padding: 25px 0px 100px;
 }
 
+.recipe-header .col-12,
+.ing-container,
+.method-header {
+  padding: 0;
+}
+
 /* Recipe Page view */
 .col-9 h1,
 #recipe_name {
   text-align: center;
-  font-size: 30px;
   height: 100%;
-}
-
-.recipe-header {
-  text-align: center;
 }
 
 .desc-heading {
   text-decoration: underline;
   padding: 15px 0px 5px;
   font-size: 30px;
-  text-align: center;
   display: block;
-  margin-left: auto;
   margin-right: auto;
 }
 
-div.col-12 {
+.recipe-header div.col-12 {
   font-family: "Raleway", sans-serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .ing-header {
   text-decoration: underline;
-  padding: 10px;
+  padding: 10px 0px;
+}
+
+.list-group li {
+  background-color: #e0e0e0;
+  padding: 0.25rem 0;
 }
 
 .col-sm-9 .list-group {
@@ -145,12 +170,18 @@ div.col-12 {
   display: list-item;
 }
 
+/* Search Page */
+
+.card.mb-3 {
+  max-width: 540px;
+}
+
 /* Footer */
 .footer-bg {
   background-color: #2f73f0;
-  position: absolute;
+  position: inherit;
   height: 100px;
-  
+  bottom: 0;
 }
 
 .social-icon a i {
