@@ -115,6 +115,8 @@ body {
 /* Main Page Cards */
 .card-body a {
   text-decoration: none;
+  color: #007faa;
+  font-size: 24px;
 }
 
 /* New Recipe Creation  */
