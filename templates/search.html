@@ -19,7 +19,7 @@
                 <div class="row no-gutters">
                   <div class="col-md-4">
                     <a
-                      href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+                      href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
                     >
                       <img
                         src="{{url_for('static', filename='images/logo.png')}}"
@@ -32,7 +32,7 @@
                   <div class="col-md-8">
                     <div class="card-body">
                       <a
-                        href="{{url_for('gt_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+                        href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
                       >
                         <h5 class="card-title">{{result['recipe_name']}}</h5>
                         <p class="card-text">
