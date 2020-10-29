@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300&display=swap");
 
 html {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 body {
@@ -131,6 +131,10 @@ body {
   padding: 0;
 }
 
+.form-control {
+    font-size: 15px;
+}
+
 /* Recipe Page view */
 .col-9 h1,
 #recipe_name {
@@ -141,7 +145,7 @@ body {
 .desc-heading {
   text-decoration: underline;
   padding: 15px 0px 5px;
-  font-size: 30px;
+  font-size: 24px;
   display: block;
   margin-right: auto;
 }
