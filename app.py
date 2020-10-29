@@ -51,20 +51,22 @@ def add_recipe():
     """
     if request.method == "POST":
 
-        rec = request.form
+        req = request.form
 
         name = request.form.get("recipe_name")
+        image = request.form.get("recipe_image")
         description = request.form.get("recipe_description")
         prep_time = request.form.get("preparation_time")
         cook_time = request.form.get("cooking_time")
         skill = request.form.get("skill")
         portions = request.form.get("portions")
 
-        ingredient_list = recipe_ingredients(rec)
-        steps_list = recipe_steps(rec)
+        ingredient_list = recipe_ingredients(req)
+        steps_list = recipe_steps(req)
 
         new_recipe = {
             "recipe_name": name,
+            "recipe_image": image,
             "recipe_description": description,
             "recipe_prep_time": int(prep_time),
             "recipe_cooking_time": int(cook_time),
@@ -126,22 +128,24 @@ def update_recipe(recipe_id):
         Update the recipe with $set data.
     """
     recipe = mongo.db.recipes
-    rec = request.form
+    req = request.form
 
-    name = rec["recipe_name"]
-    description = rec["recipe_description"]
-    prep_time = rec["preparation_time"]
-    cook_time = rec["cooking_time"]
-    skill = rec["skill"]
-    portions = rec["portions"]
+    name = req["recipe_name"]
+    image = req["recipe_image"]
+    description = req["recipe_description"]
+    prep_time = req["preparation_time"]
+    cook_time = req["cooking_time"]
+    skill = req["skill"]
+    portions = req["portions"]
 
-    ingredient_list = recipe_ingredients(rec)
-    steps_list = recipe_steps(rec)
+    ingredient_list = recipe_ingredients(req)
+    steps_list = recipe_steps(req)
 
     recipe.update_one({'_id': ObjectId(recipe_id)},
                       {
         "$set": {
             "recipe_name": name,
+            "recipe_image": image,
             "recipe_description": description,
             "recipe_prep_time": int(prep_time),
             "recipe_cooking_time": int(cook_time),

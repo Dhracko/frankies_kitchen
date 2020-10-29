@@ -23,9 +23,10 @@
     </div>
   </div>
 
-  <!-- Recipe description -->
+  <!-- Recipe Input -->
   <div class="container-fluid">
     <div class="row">
+      <!-- Recipe Description -->
       <div class="col">
         <div class="row recipe-header">
           <label class="col-12">
@@ -112,15 +113,24 @@
           ></label>
         </div>
       </div>
+
+      <!-- Image Input -->
       <div class="col">
-        <img
-          src="{{url_for('static', filename='images/wrap.jpg')}}"
-          alt="wrap"
+        <label for="recipe_image">Add your recipe photo link : </label>
+        <input
+          class="form-control"
+          type="text"
+          id="recipe_image"
+          name="recipe_image"
+          pattern="https?://.+"
+          title="Include http://"
+          required
         />
       </div>
     </div>
-    <!-- Ingredients Input -->
+
     <div class="row">
+      <!-- Ingredients Input -->
       <div class="col-sm-4 ing-container">
         <h3 class="ing-header">Ingredients</h3>
         <div class="form-group" id="ingredient">
@@ -158,7 +168,7 @@
           </button>
         </div>
       </div>
-
+      <!-- Method Step Input -->
       <div class="col-sm-9 method-header">
         <h3 class="ing-header">Method</h3>
         <div class="form-group" id="step_inputs">

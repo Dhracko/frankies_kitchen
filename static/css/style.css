@@ -165,6 +165,11 @@ body {
   width: -webkit-fill-available;
 }
 
+.recipe-image {
+    height: 400px;
+    width: 600px;
+}
+
 /* Udate - Edit Recipe */
 .step-number {
   display: list-item;
