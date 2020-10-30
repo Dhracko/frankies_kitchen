@@ -14,11 +14,11 @@ $(document).ready(function () {
   });
 
   $("textarea").keypress(function () {
-    if (this.value.length > 150) {
+    if (this.value.length > 120) {
       return false;
     }
     $("#description-count").html(
-      "Remaining characters : " + (150 - this.value.length)
+      "Remaining characters : " + (120 - this.value.length)
     );
   });
 

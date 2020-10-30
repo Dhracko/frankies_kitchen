@@ -26,31 +26,8 @@
   <!-- Recipe Input -->
   <div class="container-fluid">
     <div class="row">
-      <!-- Recipe Description -->
       <div class="col">
         <div class="row recipe-header">
-          <label class="col-12">
-            <strong class="desc-heading">Recipe Description</strong>
-            <div class="col-12">
-              <textarea
-                class="form-control"
-                name="recipe_description"
-                id="description"
-                cols="40"
-                rows="3"
-                minlength="10"
-                maxlength="150"
-                required
-              ></textarea></div
-          ></label>
-          <div class="text-remaining text-left p-2">
-            <small
-              ><span id="description-count">150</span> characters
-              remaining</small
-            >
-          </div>
-          <div class="w-100"></div>
-
           <!-- Recipe Dificulty drop down menu -->
           <label class="col-12">
             <strong class="desc-heading">Recipe Difficulty</strong>
@@ -64,8 +41,9 @@
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
               </select>
-            </div></label
-          >
+            </div>
+          </label>
+
           <!-- Preparation Time Input -->
           <label class="col-12">
             <strong class="desc-heading">Preparation Time</strong>
@@ -81,6 +59,7 @@
                 required
               /></div
           ></label>
+
           <!-- Cooking Time Input -->
           <label class="col-12">
             <strong class="desc-heading">Cooking Time</strong>
@@ -96,6 +75,7 @@
                 required
               /></div
           ></label>
+
           <!-- Portions -->
           <label class="col-12">
             <strong class="desc-heading">Servings</strong>
@@ -111,6 +91,28 @@
                 required
               /></div
           ></label>
+          
+          <!-- Recipe Description -->
+          <label class="col-12">
+            <strong class="desc-heading">Recipe Description</strong>
+            <div class="col-12">
+              <textarea
+                class="form-control"
+                name="recipe_description"
+                id="description"
+                cols="40"
+                rows="3"
+                minlength="10"
+                maxlength="120"
+                required
+              ></textarea></div
+          ></label>
+          <div class="text-remaining text-left p-2">
+            <small
+              ><span id="description-count">120</span> characters
+              remaining</small
+            >
+          </div>
         </div>
       </div>
 

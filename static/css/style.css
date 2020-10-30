@@ -142,8 +142,8 @@ body {
 }
 
 .card-front img {
-  max-height: 200px;
-  max-width: 300px;
+    width: inherit;
+    max-height: 87%;
 }
 
 .flip-card-inner {
@@ -172,7 +172,7 @@ body {
 
 .card-back {
   transform: rotateY(180deg);
-  font-size: 16px
+  font-size: 20px
 }
 
 /* New Recipe Creation  */
