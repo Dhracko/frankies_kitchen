@@ -65,9 +65,9 @@ To achive this the website will have the following criteria:
 
 ### Colours
 
-- I've choosen [ **e0e0e0** ] as body background colour which is an off white colour, so the recipes cards will be more visable and increasing the contrast. Adding [ **#4F5A65** ] for text colour with contrast ratio of 5.33 to the WCAG Standards.
+- I've choosen [ **#e0e0e0** ] as body background colour which is an off white colour, so the recipes cards will be more visable and increasing the contrast. Adding [ **#4F5A65** ] for text colour with contrast ratio of 5.33 to the WCAG Standards.
 
-- The colour for the cards recipes is [ **007faa** ] with a contrast ratio of 4.55 
+- The colour for the cards recipes is [ **#036788** ] with a contrast ratio of 4.82
 
 ---
 
