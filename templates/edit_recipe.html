@@ -22,32 +22,11 @@
     </div>
   </div>
 
-  <!-- Recipe description -->
+  <!-- Recipe Input -->
   <div class="container-fluid">
     <div class="row">
       <div class="col">
         <div class="row recipe-header">
-          <strong class="desc-heading">Recipe Description</strong>
-          <div class="col-12">
-            <textarea
-              class="form-control"
-              name="recipe_description"
-              id="description"
-              value="{{recipe.recipe_description}}"
-              cols="40"
-              rows="3"
-              minlength="10"
-              maxlength="120"
-            >
-            {{recipe.recipe_description}}</textarea
-            >
-          </div>
-          <div class="text-remaining text-left p-2">
-            <small
-              ><span id="description-count">120</span> characters
-              remaining</small
-            >
-          </div>
           <div class="w-100"></div>
 
           <!-- Recipe Dificulty drop down menu -->
@@ -104,8 +83,27 @@
               required
             />
           </div>
+          <!-- Recipe Description -->
+          <strong class="desc-heading">Recipe Description</strong>
+          <div class="col-12">
+            <textarea class="form-control" name="recipe_description"
+              id="description"
+              value="{{recipe.recipe_description}}"
+              cols="40"
+              rows="3"
+              minlength="10"
+              maxlength="120"
+              >{{recipe.recipe_description}}</textarea>
+          </div>
+          <div class="text-remaining text-left p-2">
+            <small
+              ><span id="description-count">120</span> characters
+              remaining</small
+            >
+          </div>
         </div>
       </div>
+      <!-- Recipe Image -->
       <div class="col">
         <img
           class="recipe-image"
@@ -125,9 +123,10 @@
         />
       </div>
     </div>
-
+    <!-- Ingredients & Method Section -->
     <div class="row no-gutters">
       <div class="col-sm-4">
+        <!-- Ingredients Edit -->
         <h3 class="ing-header">Ingredients</h3>
         <div class="form-group" id="ingredient">
           {% for ingredient in recipe.recipe_ingredients %}
@@ -222,6 +221,7 @@
   </div>
 </form>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="{{ url_for('static', filename='js/add-recipe.js')}}"></script>
+
 {% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
