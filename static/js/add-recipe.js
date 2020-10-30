@@ -14,16 +14,15 @@ $(document).ready(function () {
   });
 
   $("textarea").keypress(function () {
-    if (this.value.length > 150) {
+    if (this.value.length > 120) {
       return false;
     }
     $("#description-count").html(
-      "Remaining characters : " + (150 - this.value.length)
+      "Remaining characters : " + (120 - this.value.length)
     );
   });
 
   /* Functions to add an extra line to the Ingredients and to the Method Steps. */
-
   $("#add_ingredient").on("click", () => {
     $("#remove_ingredient").removeAttr("disabled", "disabled");
     $("#ingredient").append(
@@ -32,30 +31,32 @@ $(document).ready(function () {
   });
 
   $("#add_step").on("click", () => {
-        $("#remove_step").removeAttr("disabled", "disabled");
-        $("#step_inputs").append('<input class="form-control my-2" type="text" name="step" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9.z\(\)\-\,]+)*$" title="Must start with an uppercase or lowercase word. Acceptable characters are hyphens, commas, periods, and brackets. Cannot start with a space." required>');
-    });
+    $("#remove_step").removeAttr("disabled", "disabled");
+    $("#step_inputs").append(
+      '<input class="form-control my-2" type="text" name="step" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9.z()-,]+)*$" title="Must start with an uppercase or lowercase word. Acceptable characters are hyphens, commas, periods, and brackets. Cannot start with a space." required>'
+    );
+  });
 
-/* Functions to the buttons to remove ingredients and methods steps in the addrecipe.html */
+  /* Functions to the buttons to remove ingredients and methods steps in the addrecipe.html */
+  $("#remove_ingredient").on("click", () => {
+    let ingredientLength = $("#ingredient").children("input").length;
 
-        $("#remove_ingredient").on("click", () => {
-        let ingredientLength = $("#ingredient").children("input").length;
+    if (ingredientLength <= 1) {
+      $("#remove_ingredient").attr("disabled", "disabled");
+    } else {
+      $("#ingredient input:last-child").remove();
+    }
+  });
 
-        if( ingredientLength <= 1) {
-            $("#remove_ingredient").attr("disabled", "disabled");
-        } else {
-            $("#ingredient input:last-child").remove();
-        }
-    });
+  $("#remove_step").on("click", () => {
+    let stepLength = $("#step_inputs").children("input").length;
 
-    $("#remove_step").on("click", () => {
-        let stepLength = $("#step_inputs").children("input").length;
-
-        if( stepLength <= 1) {
-            $("#remove_step").attr("disabled", "disabled");
-        } else {
-            $("#step_inputs input:last-child").remove();
-        }
-
-    });
+    if (stepLength <= 1) {
+      $("#remove_step").attr("disabled", "disabled");
+    } else {
+      $("#step_inputs input:last-child").remove();
+    }
+  });
 });
+
+

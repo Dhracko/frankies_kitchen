@@ -33,23 +33,10 @@ def get_recipes():
 
 
 # Create recipe page
-
-@app.route('/add_recipe')
+@app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
-    """Gets the recipes in Mongodb.
-    Args:
-        recipes: Find the recipes
-    Returns:
-        Rendered create_recipe.html containing the recipes
     """
-    return render_template('create_recipe.html',
-                           recipes=mongo.db.recipes.find())
-
-
-@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
-    """
-    Create and Insert new recipe in Mongodb.
+    Create a new recipe in Mongodb.
 
     By defining the different fields of input
     using the request.form methods and then
@@ -62,40 +49,43 @@ def insert_recipe():
     Returns:
         recipe.insert_one(new_recipe): Insert the recipe with the data.
     """
-    rec = request.form
+    if request.method == "POST":
 
-    name = rec["recipe_name"]
-    description = rec["recipe_description"]
-    prep_time = rec["preparation_time"]
-    cook_time = rec["cooking_time"]
-    skill = rec["skill"]
-    portions = rec["portions"]
+        req = request.form
 
-    ingredient_list = recipe_ingredients(rec)
-    steps_list = recipe_steps(rec)
+        name = request.form.get("recipe_name")
+        image = request.form.get("recipe_image")
+        description = request.form.get("recipe_description")
+        prep_time = request.form.get("preparation_time")
+        cook_time = request.form.get("cooking_time")
+        skill = request.form.get("skill")
+        portions = request.form.get("portions")
 
-    new_recipe = {
-        "recipe_name": name,
-        "recipe_description": description,
-        "recipe_prep_time": int(prep_time),
-        "recipe_cooking_time": int(cook_time),
-        "recipe_skill": skill,
-        "recipe_portions": int(portions),
-        "recipe_steps": steps_list,
-        "recipe_ingredients": ingredient_list,
-    }
+        ingredient_list = recipe_ingredients(req)
+        steps_list = recipe_steps(req)
 
-    recipe = mongo.db.recipes
-    recipe.insert_one(new_recipe)
-    return redirect(url_for('get_recipes'))
+        new_recipe = {
+            "recipe_name": name,
+            "recipe_image": image,
+            "recipe_description": description,
+            "recipe_prep_time": int(prep_time),
+            "recipe_cooking_time": int(cook_time),
+            "recipe_skill": skill,
+            "recipe_portions": int(portions),
+            "recipe_steps": steps_list,
+            "recipe_ingredients": ingredient_list,
+        }
+
+        mongo.db.recipes.insert_one(new_recipe)
+        return redirect(url_for('get_recipes'))
+    return render_template('create_recipe.html')
 
 
 # Read Recipe Page
 
-@app.route("/recipe/<recipe_id>/<recipe_name>")
+@app.route("/recipe/<recipe_id>")
 def get_recipe(recipe_id):
     """Display the recipe selected.
-
     Args:
         recipe_id: Finds a recipe with the specific id.
     Returns:
@@ -109,7 +99,7 @@ def get_recipe(recipe_id):
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    """Gets the recipe to be edit.
+    """Gets the recipe by id to be edited.
     Args:
         recipe_id: Unique ID of the given recipe.
         the_recipe: Finds the recipe with the recipe_id.
@@ -123,7 +113,7 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     """
-    Update a recipe in Mongodb.
+    Edit and Update a recipe in Mongodb.
 
     By defining the different fields of input
     using the request.form methods and then
@@ -138,22 +128,24 @@ def update_recipe(recipe_id):
         Update the recipe with $set data.
     """
     recipe = mongo.db.recipes
-    rec = request.form
+    req = request.form
 
-    name = rec["recipe_name"]
-    description = rec["recipe_description"]
-    prep_time = rec["preparation_time"]
-    cook_time = rec["cooking_time"]
-    skill = rec["skill"]
-    portions = rec["portions"]
+    name = req["recipe_name"]
+    image = req["recipe_image"]
+    description = req["recipe_description"]
+    prep_time = req["preparation_time"]
+    cook_time = req["cooking_time"]
+    skill = req["skill"]
+    portions = req["portions"]
 
-    ingredient_list = recipe_ingredients(rec)
-    steps_list = recipe_steps(rec)
+    ingredient_list = recipe_ingredients(req)
+    steps_list = recipe_steps(req)
 
     recipe.update_one({'_id': ObjectId(recipe_id)},
                       {
         "$set": {
             "recipe_name": name,
+            "recipe_image": image,
             "recipe_description": description,
             "recipe_prep_time": int(prep_time),
             "recipe_cooking_time": int(cook_time),
@@ -176,7 +168,7 @@ def delete_recipe(recipe_id):
     Returns:
         Removes the recipe with the unique ID.
     """
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
 

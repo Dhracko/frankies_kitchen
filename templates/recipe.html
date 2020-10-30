@@ -13,11 +13,19 @@
         >
       </li>
       <li class="nav-item">
-        <a
+      <button onclick="deleteBtn()"><i class="fas fa-trash-alt"></i> Delete</button>
+      <script>
+        function deleteBtn() {
+        if (window.confirm("Do you want to delete the recipe?")) {
+            window.open("{{url_for('delete_recipe', recipe_id=recipe._id)}}", "Done!");
+            }
+        }
+        </script>
+       <!-- <a
           class="nav-link"
           href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
           ><i class="fas fa-trash-alt"></i> Delete</a
-        >
+        > -->
       </li>
     </ul>
   </div>
@@ -49,7 +57,7 @@
       </div>
     </div>
     <div class="col">
-      <img src="{{url_for('static', filename='images/wrap.jpg')}}" alt="wrap" />
+      <img class="recipe-image" src="{{recipe.recipe_image}}" alt="{{recipe.recipe_name}}" />
     </div>
   </div>
   <!-- Ingredients and Method Section -->

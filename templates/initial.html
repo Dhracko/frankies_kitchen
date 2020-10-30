@@ -1,58 +1,64 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- Search Bar -->
-<div class="row justify-content-center search-bar">
-  <form class="col" action="{{url_for('get_search')}}" method="POST">
-    <label class="col-9">Search by name
-    <input
-      class="form-control col-9"
-      type="search"
-      name="search_field"
-      id="search_field"
-    /></label>
-    <button type="submit" class="btn btn-primary col-2">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </form>
+<div id="search-bar" class="container">
+  <div class="row justify-content-center">
+    <form
+      class="col search-bar"
+      action="{{url_for('get_search')}}"
+      method="POST"
+    >
+      <div class="input-group">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search Recipes by name"
+          aria-label="Search Recipes by name"
+          aria-describedby="basic-addon2"
+          name="search_field"
+          id="search_field"
+        />
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- Recipes Card style -->
-<div class="row">
+<div class="row justify-content-center">
   <div class="card-deck">
     {% for recipe in recipes %}
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="card-body">
             <a
-              href="{{url_for('get_recipe', recipe_id=recipe['_id'],recipe_name=recipe['recipe_name'])}}"
+              href="{{url_for('get_recipe',recipe_id=recipe['_id'],recipe_name=recipe['recipe_name'])}}"
             >
-              <img
-                src="{{url_for('static', filename='images/generic_logo.png')}}"
-                class="card-img"
-                alt="recipe image"
-              />
+              <div class="flip-card-inner">
+                <div class="card-front">
+                  <img
+                    src="{{recipe.recipe_image}}"
+                    alt="{{recipe.recipe_name}} image"
+                  />
+                  <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                </div>
+                <div class="card-back">
+                  <p class="card-text">{{recipe.recipe_description}}</p>
+                  <p class="card-text">
+                    <small class="text-muted"
+                      >Portions: {{recipe.recipe_portions}}
+                    </small>
+                    <small class="text-muted">
+                      Cooking Time: {{recipe.recipe_cooking_time}}</small
+                    >
+                  </p>
+                </div>
+              </div>
             </a>
-          </div>
-
-          <div class="col-md-8">
-            <div class="card-body">
-              <a
-                href="{{url_for('get_recipe',recipe_id=recipe['_id'],recipe_name=recipe['recipe_name'])}}"
-              >
-                <h5 class="card-title">{{recipe.recipe_name}}</h5>
-                <p class="card-text">{{recipe.recipe_description}}</p>
-                <p class="card-text">
-                  <small class="text-muted"
-                    >Portions: {{recipe.recipe_portions}}</small
-                  >
-                </p>
-                <p class="card-text">
-                  <small class="text-muted"
-                    >Time: {{recipe.recipe_cooking_time}}</small
-                  >
-                </p>
-              </a>
-            </div>
           </div>
         </div>
       </div>
