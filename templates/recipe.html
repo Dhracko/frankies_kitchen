@@ -47,21 +47,21 @@
   <!-- Ingredients and Method Section -->
   <div class="row">
     <div class="col-sm-4 ing-container">
-      <ol class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
         <h3 class="ing-header">Ingredients</h3>
         {% for ingredient in recipe.recipe_ingredients %}
         <li class="list-group-item">{{ingredient}}</li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
 
     <div class="col-sm-9 method-header">
-      <ol class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
         <h3 class="ing-header">Method</h3>
         {% for steps in recipe.recipe_steps %}
-        <li class="list-group-item step-number">{{steps}}</li>
+        <li class="list-group-item">{{steps}}</li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
   </div>
 </div>
