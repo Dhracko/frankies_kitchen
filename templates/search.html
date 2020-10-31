@@ -1,66 +1,46 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container-fluid">
-  <div class="row no-gutters">
-    <div class="col-12">
-      <div class="row no-gutters text-center justify-content-center">
-        <!-- If no results are found for search then the below is shown -->
+<!-- If no results are found for search then the below is shown -->
 
-        {% if count == 0 %}
-        <div class="col-12">
-          <p>Sorry, no results found</p>
-        </div>
-        {% else %}
-        <div class="row">
-          <div class="card-deck">
-            {% for result in search_result %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-              <div class="card mb-3">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <a
-                      href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
+{% if count == 0 %}
+<div class="col-12">
+  <p>Sorry, no results found</p>
+</div>
+{% else %}
+<div class="row justify-content-center">
+  <div class="card-deck">
+    {% for result in search_result %}
+    <div class="col">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="card-body">
+            <a href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}">
+              <div class="flip-card-inner">
+                <div class="card-front">
+                  <img
+                    src="{{result['recipe_image']}}"
+                    alt="result['recipe_name'] image"
+                  />
+                  <h5 class="card-title">{{result['recipe_name']}}</h5>
+                </div>
+                <div class="card-back">
+                  <p class="card-text">{{result['recipe_description']}}</p>
+                  <p class="card-text">
+                    <small class="text-muted"
+                      >Portions: {{result['recipe_portions']}}
+                    </small>
+                    <small class="text-muted">
+                      Cooking Time: {{result['recipe_cooking_time']}}</small
                     >
-                      <img
-                        src="{{url_for('static', filename='images/logo.png')}}"
-                        class="card-img"
-                        alt="recipe image"
-                      />
-                    </a>
-                  </div>
-
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <a
-                        href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}"
-                      >
-                        <h5 class="card-title">{{result['recipe_name']}}</h5>
-                        <p class="card-text">
-                          {{result['recipe_description']}}
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted"
-                            >Portions: {{result['recipe_portions']}}</small
-                          >
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted"
-                            >Time: {{result['recipe_cooking_time']}}</small
-                          >
-                        </p>
-                      </a>
-                    </div>
-                  </div>
+                  </p>
                 </div>
               </div>
-            </div>
-            {% endfor %}
+            </a>
           </div>
         </div>
-        {% endif %}
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
-
-{% endblock %}
+{% endif %} {% endblock %}

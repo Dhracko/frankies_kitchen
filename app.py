@@ -185,6 +185,7 @@ def search_recipes(search_term):
     """Searches recipe by name
     Args:
         search_term: Search text to match recipes
+        search_count: Counts the number of recipes which match the search
     Returns:
         Rendered search.html containing recipes matching search_term
     """
@@ -194,8 +195,6 @@ def search_recipes(search_term):
         ("recipe_name", "text")])
 
     search_result = recipe.find({"$text": {"$search": search_term}})
-
-    # Counts the number of recipes which match the search
 
     search_count = recipe.count_documents({"$text":
                                            {"$search": search_term}})
