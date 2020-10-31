@@ -14,13 +14,6 @@
       </li>
       <li class="nav-link">
       <button onclick="deleteBtn()"><i class="fas fa-trash-alt"></i> Delete</button>
-      <script>
-        function deleteBtn() {
-        if (window.confirm("Do you want to delete the recipe?")) {
-            window.open("{{url_for('delete_recipe', recipe_id=recipe._id)}}", "Done!");
-            }
-        }
-        </script>
       </li>
     </ul>
   </div>
@@ -77,4 +70,14 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block script %}
+<script>
+    function deleteBtn() {
+        if (window.confirm("Do you want to delete the recipe?")) {
+            window.open("{{url_for('delete_recipe', recipe_id=recipe._id)}}", "Done!");
+            }
+    }
+</script>
 {% endblock %}

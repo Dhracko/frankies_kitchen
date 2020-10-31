@@ -91,7 +91,7 @@
                 required
               /></div
           ></label>
-          
+
           <!-- Recipe Description -->
           <label class="col-12">
             <strong class="desc-heading">Recipe Description</strong>
@@ -126,7 +126,6 @@
           name="recipe_image"
           pattern="https?://.+"
           title="Include http://"
-          required
         />
       </div>
     </div>
@@ -225,8 +224,6 @@
   </div>
 </form>
 
-{% endblock %}
-
-{% block script %}
+{% endblock %} {% block script %}
 <script src="{{ url_for('static', filename='js/add-recipe.js')}}"></script>
 {% endblock %}
