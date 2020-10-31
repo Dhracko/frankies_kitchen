@@ -125,6 +125,7 @@ body {
   background-image: url(../images/search_bar.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-position-y: center;
   height: 400px;
   position: relative;
 }
@@ -262,16 +263,36 @@ body {
 }
 
 /* Media Content */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 989px) {
   ul.nav-full {
+    display: none;
+  }
+
+  #search-bar{
+      height: 250px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .menu-bar {
     display: none;
   }
 }
 
-@media screen and (min-width: 851px) {
-  .menu-bar {
-    display: none;
+@media screen and (max-width: 576px) {
+  #search-bar{
+      height: 200px;
   }
+}
+
+@media screen and (max-width: 4120px) {
+    .social-icon a i {
+        padding: 10px 13px;
+    }
+    .copyrght p {
+        padding: 0px 8px;
+ 
+    }
 }
 
 @media screen and (max-height: 450px) {
