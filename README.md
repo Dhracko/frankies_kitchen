@@ -164,7 +164,7 @@ You can view the testing done in the [test.md](https://github.com/Dhracko/franki
 Initial Deployment:
 
 
-* @Github
+* @ Github
 
     - Git init ←- to initialize the repository if haven’t done so yet
     - Git add . 
@@ -174,38 +174,39 @@ Initial Deployment:
     - Create app in Heroku
         - Click on “New” button on top right corner
         - From the scroll down select “Create new app”
-Introduce the app-name ←- frankies-kitchen
-Select Europe on the “Choose a region” scroll down
-Click “Create app”
-@Github
-$ heroku login -i
-Email & Password
-Create requirements.txt :
-$ pip3 freeze --local > requirements.txt
-Create Procfile:
-$ echo web: python app.py > Procfile
-Initialize the git repository in a new or existing directory
-$ git init
-Deploy the application:
-$ git add .
-$ git commit -m “Initial deployment”
-@ Heroku Settings Tab
-Copy the Heroku git URL link
-Push the application into Heroku:
-$ git remote add heroku https://git.heroku.com/frankies-kitchen.git
-$ git push -u heroku master
-@ Heroku
-Set Heroku IP , PORT & env.py environment variables:
-Click on Settings 
-Click on “Reveal Config Vars”
-Key :  IP
-VALUE: 0.0.0.0
-Click Add
-Key: PORT
-VALUE: 5000
-Key : MOMGO_URI
-VALUE : (copy link from env.py)
-Click on “Hide Config Vars”
+        -Introduce the app-name ←- frankies-kitchen
+        -Select Europe on the “Choose a region” scroll down
+        -Click “Create app”
+* @ Github
+    - $ heroku login -i
+    - Email & Password
+
+    - Create requirements.txt :
+        - $ pip3 freeze --local > requirements.txt
+    - Create Procfile:
+        - $ echo web: python app.py > Procfile
+
+    - Initialize the git repository in a new or existing directory
+        - $ git init
+    - Deploy the application:
+        - $ git add .
+        - $ git commit -m “Initial deployment”
+* @ Heroku Settings Tab
+    - Copy the Heroku git URL link
+    - Push the application into Heroku:
+        - $ git remote add heroku https://git.heroku.com/frankies-kitchen.git
+        - $ git push -u heroku master
+    - Set Heroku IP , PORT & env.py environment variables:
+    - Click on Settings 
+    - Click on “Reveal Config Vars”
+    - Key :  IP
+    - VALUE: 0.0.0.0
+    - Click Add
+    - Key: PORT
+    - VALUE: 5000
+    - Key : MOMGO_URI
+    - VALUE : (copy link from env.py)
+    - Click on “Hide Config Vars”
 
 
 ---
