@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 $(document).ready(function () {
   /*
     Funtions to count the characters left on the input for recipe name and 
@@ -58,5 +60,3 @@ $(document).ready(function () {
     }
   });
 });
-
-
