@@ -228,14 +228,17 @@ body {
 }
 
 .recipe-image {
-  height: 400px;
-  width: 600px;
+    width: inherit;
 }
 
-.nav-link button {
+.nav-item button {
     border: none;
     color: #007bff;
     background-color: inherit;
+}
+
+ul li.nav-item {
+    display: contents;
 }
 
 /* Udate - Edit Recipe */
@@ -285,7 +288,14 @@ body {
   }
 }
 
-@media screen and (max-width: 4120px) {
+@media screen and (max-width: 376px) {
+    .card-body {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 412px) {
     .social-icon a i {
         padding: 10px 13px;
     }
