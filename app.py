@@ -63,7 +63,7 @@ def add_recipe():
         steps_list = recipe_steps(req)
 
         if image == "":
-            image = "../static/images/generic_logo.png'"
+            image = "static/images/generic_logo.png"
 
         new_recipe = {
             "recipe_name": name,
@@ -134,6 +134,9 @@ def update_recipe(recipe_id):
     cook_time = req["cooking_time"]
     skill = req["skill"]
     portions = req["portions"]
+
+    if image == "":
+        image = "../static/images/generic_logo.png"
 
     ingredient_list = recipe_ingredients(req)
     steps_list = recipe_steps(req)
