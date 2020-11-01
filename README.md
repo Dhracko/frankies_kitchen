@@ -121,7 +121,9 @@ Or Delete the recipe:
 <a name="Future"></a>
 ## Future Goals
 
-A nice future feature to create is the selection of the ingredients of a recipe and added to a basket for shopping.
+* A nice future feature to create is the selection of the ingredients of a recipe and added to a basket for shopping.
+
+* A contact form on a seperate page where the users can contact the company for more information.
 
 ---
 <a name="Technology"></a>
