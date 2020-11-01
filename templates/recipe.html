@@ -4,35 +4,19 @@
     <h1>{{recipe.recipe_name}}</h1>
   </div>
   <div class="col-3">
-    <ul class="nav justify-content-end">
+    <ul class="nav justify-content-sm-center">
       <li class="nav-item">
-        <a
-          class="nav-link"
-          href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-          ><i class="fas fa-edit"></i> Edit</a
-        >
+        <a class="nav-link" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"><i class="fas fa-edit"></i> Edit</a>
       </li>
       <li class="nav-item">
       <button onclick="deleteBtn()"><i class="fas fa-trash-alt"></i> Delete</button>
-      <script>
-        function deleteBtn() {
-        if (window.confirm("Do you want to delete the recipe?")) {
-            window.open("{{url_for('delete_recipe', recipe_id=recipe._id)}}", "Done!");
-            }
-        }
-        </script>
-       <!-- <a
-          class="nav-link"
-          href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-          ><i class="fas fa-trash-alt"></i> Delete</a
-        > -->
       </li>
     </ul>
   </div>
 </div>
 <div class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-sm-9 col-md-5">
       <div class="row recipe-header">
         <strong class="desc-heading">Recipe Difficulty</strong>
         <div class="col-12">
@@ -56,30 +40,40 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-7">
       <img class="recipe-image" src="{{recipe.recipe_image}}" alt="{{recipe.recipe_name}}" />
     </div>
   </div>
   <!-- Ingredients and Method Section -->
   <div class="row">
     <div class="col-sm-4 ing-container">
-      <ol class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
         <h3 class="ing-header">Ingredients</h3>
         {% for ingredient in recipe.recipe_ingredients %}
         <li class="list-group-item">{{ingredient}}</li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
 
     <div class="col-sm-9 method-header">
-      <ol class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
         <h3 class="ing-header">Method</h3>
         {% for steps in recipe.recipe_steps %}
-        <li class="list-group-item step-number">{{steps}}</li>
+        <li class="list-group-item">{{steps}}</li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
   </div>
 </div>
 
+{% endblock %}
+
+{% block script %}
+<script>
+    function deleteBtn() {
+        if (window.confirm("Do you want to delete the recipe?")) {
+            window.open("{{url_for('delete_recipe', recipe_id=recipe._id)}}", "_parent");
+            }
+    }
+</script>
 {% endblock %}

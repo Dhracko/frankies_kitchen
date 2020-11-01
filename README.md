@@ -127,14 +127,32 @@ A nice future feature to create is the selection of the ingredients of a recipe 
 <a name="Technology"></a>
 ## Technology Used
 
-* 
-* 
-* 
-* 
+* HTML & CSS programming languages
+* [Bootstrap](https://getbootstrap.com/) - to easily adapt the website to be responsive for all users. Version 4.4.1
+* [Google Fonts](https://fonts.google.com/) - Chango and Mukta Styles
+* [Font Awesome](https://fontawesome.com/) - Social Media Logos version 5.0.0
+* [GIT](https://git-scm.com/) - Version Control
+* [GitHub](https://github.com/) - to host the repositories for this project and the live website preview
+* [Balsamiq Wireframe](https://balsamiq.com/) - to create the Wireframes Mockups
 
 ---
 <a name="Testing"></a>
 ## Testing
+
+### Code Validation
+
+- Python - All code was run through [PEP8](http://pep8online.com/) and the [SolarLint](https://www.sonarlint.org/) plugin for VSCode was used. All code is PEP8 compliant.
+
+- HTML - All code was run through the [W3C HTML Validator](https://validator.w3.org/) to ensure it was valid code and no errors were made.
+
+- CSS - All styling was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to ensure it was valid and no errors were made.
+
+- jQuery - All my script was run through the [JSHint](https://jshint.com/) validator and no errors were found.
+
+
+### Manual Testing
+
+You can view the testing done in the [test.md](https://github.com/Dhracko/frankies_kitchen/test.md)
 <a name="Issues"></a>
 ### Issues and resolutions
 
@@ -143,6 +161,52 @@ A nice future feature to create is the selection of the ingredients of a recipe 
 ---
 <a name="Deployment"></a>
 ## Deployment
+Initial Deployment:
+
+
+* @Github
+
+    - Git init ←- to initialize the repository if haven’t done so yet
+    - Git add . 
+    - Git commit - m “Initial deployment”
+
+* @ Heroku website
+    - Create app in Heroku
+        - Click on “New” button on top right corner
+        - From the scroll down select “Create new app”
+Introduce the app-name ←- frankies-kitchen
+Select Europe on the “Choose a region” scroll down
+Click “Create app”
+@Github
+$ heroku login -i
+Email & Password
+Create requirements.txt :
+$ pip3 freeze --local > requirements.txt
+Create Procfile:
+$ echo web: python app.py > Procfile
+Initialize the git repository in a new or existing directory
+$ git init
+Deploy the application:
+$ git add .
+$ git commit -m “Initial deployment”
+@ Heroku Settings Tab
+Copy the Heroku git URL link
+Push the application into Heroku:
+$ git remote add heroku https://git.heroku.com/frankies-kitchen.git
+$ git push -u heroku master
+@ Heroku
+Set Heroku IP , PORT & env.py environment variables:
+Click on Settings 
+Click on “Reveal Config Vars”
+Key :  IP
+VALUE: 0.0.0.0
+Click Add
+Key: PORT
+VALUE: 5000
+Key : MOMGO_URI
+VALUE : (copy link from env.py)
+Click on “Hide Config Vars”
+
 
 ---
 <a name="Credits"></a>

@@ -1,31 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- Search Bar -->
-<div id="search-bar" class="container">
-  <div class="row justify-content-center">
-    <form
-      class="col search-bar"
-      action="{{url_for('get_search')}}"
-      method="POST"
-    >
-      <div class="input-group">
-        <input
-          type="search"
-          class="form-control"
-          placeholder="Search Recipes by name"
-          aria-label="Search Recipes by name"
-          aria-describedby="basic-addon2"
-          name="search_field"
-          id="search_field"
-        />
-        <div class="input-group-append">
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-search"></i> Search
-          </button>
+<div id="search-bar" class="container d-flex">
+    <form class="col search-bar" action="{{url_for('get_search')}}" method="POST">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search Recipes by name" aria-label="Search Recipes by name" aria-describedby="basic-addon2" name="search_field" id="search_field" required/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
         </div>
-      </div>
     </form>
-  </div>
 </div>
 <!-- Recipes Card style -->
 <div class="row justify-content-center">

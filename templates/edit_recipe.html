@@ -86,14 +86,17 @@
           <!-- Recipe Description -->
           <strong class="desc-heading">Recipe Description</strong>
           <div class="col-12">
-            <textarea class="form-control" name="recipe_description"
+            <textarea
+              class="form-control"
+              name="recipe_description"
               id="description"
               value="{{recipe.recipe_description}}"
               cols="40"
               rows="3"
               minlength="10"
               maxlength="120"
-              >{{recipe.recipe_description}}</textarea>
+            >{{recipe.recipe_description}}</textarea
+            >
           </div>
           <div class="text-remaining text-left p-2">
             <small
@@ -108,7 +111,7 @@
         <img
           class="recipe-image"
           src="{{recipe.recipe_image}}"
-          alt="{{url_for('static', filename='images/generic_logo.png')}}"
+          alt="{{recipe.recipe_name}}"
         />
         <label for="recipe_image">Add your recipe photo link : </label>
         <input
@@ -119,7 +122,6 @@
           pattern="https?://.+"
           title="Include http://"
           value="{{recipe.recipe_image}}"
-          required
         />
       </div>
     </div>
@@ -220,8 +222,7 @@
     </button>
   </div>
 </form>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+{% endblock %} {% block script %}
 <script src="{{ url_for('static', filename='js/add-recipe.js')}}"></script>
 {% endblock %}
-
-

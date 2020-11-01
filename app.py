@@ -5,6 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from lists import recipe_ingredients, recipe_steps
 
+
 if os.path.exists("env.py"):
     import env
 
@@ -16,8 +17,6 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
-
-# Landing Main page
 
 @app.route('/')
 @app.route('/get_recipes')
@@ -32,7 +31,6 @@ def get_recipes():
                            recipes=mongo.db.recipes.find())
 
 
-# Create recipe page
 @app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
     """
@@ -64,6 +62,9 @@ def add_recipe():
         ingredient_list = recipe_ingredients(req)
         steps_list = recipe_steps(req)
 
+        if image == "":
+            image = "static/images/generic_logo.png"
+
         new_recipe = {
             "recipe_name": name,
             "recipe_image": image,
@@ -81,8 +82,6 @@ def add_recipe():
     return render_template('create_recipe.html')
 
 
-# Read Recipe Page
-
 @app.route("/recipe/<recipe_id>")
 def get_recipe(recipe_id):
     """Display the recipe selected.
@@ -94,8 +93,6 @@ def get_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=the_recipe)
 
-
-# Update / Edit Recipe
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
@@ -138,6 +135,9 @@ def update_recipe(recipe_id):
     skill = req["skill"]
     portions = req["portions"]
 
+    if image == "":
+        image = "../static/images/generic_logo.png"
+
     ingredient_list = recipe_ingredients(req)
     steps_list = recipe_steps(req)
 
@@ -159,7 +159,6 @@ def update_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
-# Delete Recipe
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     """Delete a recipe
@@ -172,7 +171,6 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
-# Search Recipe by name form
 @app.route('/search', methods=["POST"])
 def get_search():
     """Defines the funtion get_search.
@@ -185,12 +183,12 @@ def get_search():
                             search_term=request.form.get("search_field")))
 
 
-# Search Results Page
 @app.route('/search/<search_term>')
 def search_recipes(search_term):
     """Searches recipe by name
     Args:
         search_term: Search text to match recipes
+        search_count: Counts the number of recipes which match the search
     Returns:
         Rendered search.html containing recipes matching search_term
     """
@@ -201,14 +199,22 @@ def search_recipes(search_term):
 
     search_result = recipe.find({"$text": {"$search": search_term}})
 
-    # Counts the number of recipes which match the search
-
     search_count = recipe.count_documents({"$text":
                                            {"$search": search_term}})
 
     return render_template("search.html", search_term=search_term,
                            search_result=search_result,
                            count=search_count)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def handle_error(e):
+    return render_template('500.html'), 500
 
 
 if __name__ == '__main__':
