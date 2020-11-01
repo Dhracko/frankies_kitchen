@@ -7,11 +7,11 @@ $(document).ready(function () {
     tell the user the number.
     */
   $("#recipe_name").keypress(function () {
-    if (this.value.length > 30) {
+    if (this.value.length > 35) {
       return false;
     }
     $("#recipe-name-count").html(
-      "Remaining characters : " + (30 - this.value.length)
+      "Remaining characters : " + (35 - this.value.length)
     );
   });
 
