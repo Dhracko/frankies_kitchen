@@ -209,11 +209,23 @@ def search_recipes(search_term):
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """Handles the error page 404
+    Arg:
+        e: Error page
+    Return:
+        Rendered 404.html page containg the advice of error
+    """
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def handle_error(e):
+    """Handles the error page 500
+    Arg:
+        e: Error page
+    Return:
+        Rendered 500.html page containg the advice of error
+    """
     return render_template('500.html'), 500
 
 
