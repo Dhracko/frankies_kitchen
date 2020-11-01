@@ -475,7 +475,10 @@ Breakdown of ``update_recipe(recipe_id)`` functionality:
             image = "static/images/generic_logo.png"
     ```
 
-    - I verified that all the information submitted from the form correctly gets uploaded to the database and no errors were found.
+    - **Bug Identified** Wrong code formatting.
+        - When applying the auto formating to the code it creates a 12 empty spaces in the ``textarea`` at the recipe description.
+    - **Fix Applied** -
+        - Manually formating the code to avoid the Chrome bug.
 
 **Associated View - Route: ``/delete/<recipe_id>`` Function: ``delete_recipe(recipe_id)``**
 
