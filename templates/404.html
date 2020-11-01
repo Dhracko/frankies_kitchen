@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container-fluid">
-it looks like we and a 404 error
-</div>
 
+<div class="col-12 no-result">
+<h3>Looks like some one forgot to pay the energy bill</h3>
+<h4>That recipe no longer exists</h4>
+<img src="{{url_for('static', filename='images/generic_logo.png')}}" alt="logo">
+</div>
 
 {% endblock %}
