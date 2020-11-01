@@ -5,53 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="{{ url_for('static', filename='images/favicon/apple-icon-60x60.png')}}"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{{ url_for('static', filename='images/favicon/apple-icon-180x180.png')}}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="36x36"
-      href="{{ url_for('static', filename='images/favicon/android-icon-36x36.png')}}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="60x60"
-      href="{{ url_for('static', filename='images/favicon/android-icon-60x60.png')}}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{{ url_for('static', filename='images/favicon/favicon-32x32.png')}}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{{ url_for('static', filename='images/favicon/favicon-16x16.png')}}"
-    />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename='images/favicon/apple-icon-60x60.png')}}" />
+	<link rel="apple-touch-icon" sizes="180x180"
+		href="{{ url_for('static', filename='images/favicon/apple-icon-180x180.png')}}" />
+	<link rel="icon" type="image/png" sizes="36x36"
+		href="{{ url_for('static', filename='images/favicon/android-icon-36x36.png')}}" />
+	<link rel="icon" type="image/png" sizes="60x60"
+		href="{{ url_for('static', filename='images/favicon/android-icon-60x60.png')}}" />
+	<link rel="icon" type="image/png" sizes="32x32"
+		href="{{ url_for('static', filename='images/favicon/favicon-32x32.png')}}" />
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="{{ url_for('static', filename='images/favicon/favicon-16x16.png')}}" />
 
     <title>Frankie's Kitchen</title>
   </head>
@@ -84,6 +52,7 @@
             </div>
         </nav>
     </header>
+    
     <div class="container-fluid">
       <div class="wrap-content">
         {% block content %} {% endblock %}

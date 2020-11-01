@@ -3,8 +3,9 @@
 <!-- If no results are found for search then the below is shown -->
 
 {% if count == 0 %}
-<div class="col-12">
-  <p>Sorry, no results found</p>
+<div class="col-12 no-result">
+  <h3>Sorry, no results found</h3>
+  <img src="{{url_for('static', filename='images/generic_logo.png')}}" alt="logo">
 </div>
 {% else %}
 <div class="row justify-content-center">
@@ -16,24 +17,17 @@
           <div class="card-body">
             <a href="{{url_for('get_recipe',recipe_id=result['_id'],recipe_name=result['recipe_name'])}}">
               <div class="flip-card-inner">
-                <div class="card-front">
-                  <img
-                    src="{{result['recipe_image']}}"
-                    alt="result['recipe_name'] image"
-                  />
-                  <h5 class="card-title">{{result['recipe_name']}}</h5>
-                </div>
-                <div class="card-back">
-                  <p class="card-text">{{result['recipe_description']}}</p>
-                  <p class="card-text">
-                    <small class="text-muted"
-                      >Portions: {{result['recipe_portions']}}
-                    </small>
-                    <small class="text-muted">
-                      Cooking Time: {{result['recipe_cooking_time']}}</small
-                    >
-                  </p>
-                </div>
+				<div class="card-front">
+					<img src="{{result['recipe_image']}}" alt="result['recipe_name'] image"/>
+					<h5 class="card-title">{{result['recipe_name']}}</h5>
+				</div>
+				<div class="card-back">
+					<p class="card-text">{{result['recipe_description']}}</p>
+					<p class="card-text">
+						<small class="text-muted">Portions: {{result['recipe_portions']}}</small>
+						<small class="text-muted">Cooking Time: {{result['recipe_cooking_time']}}</small>
+					</p>
+				</div>
               </div>
             </a>
           </div>
@@ -43,4 +37,6 @@
     {% endfor %}
   </div>
 </div>
-{% endif %} {% endblock %}
+{% endif %}
+
+{% endblock %}
